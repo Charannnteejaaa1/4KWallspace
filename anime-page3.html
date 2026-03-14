@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anime Wallpapers</title>
+
+<link rel="stylesheet" href="style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<h1><a href="index.html" class="logo">4KWallSpace</a></h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="anime.html">Anime</a>
+<a href="cars.html">Cars</a>
+<a href="fourk.html">4K</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+<h2>Anime Wallpapers</h2>
+</section>
+
+
+<section class="wallpaper-grid">
+
+<div class="wallpaper">
+<img src="images/anime/anime19.jpg" alt="Anime wallpaper 19" loading="lazy">
+</div>
+
+<div class="wallpaper">
+<img src="images/anime/anime20.jpg" alt="Anime wallpaper 20" loading="lazy">
+</div>
+
+<div class="wallpaper">
+<img src="images/anime/anime21.jpg" alt="Anime wallpaper 3" loading="lazy">
+</div>
+
+<div class="wallpaper">
+<img src="images/anime/anime22.jpg" alt="Anime wallpaper 4" loading="lazy">
+</div>
+
+<div class="wallpaper">
+<img src="images/anime/anime23.jpg" alt="Anime wallpaper 5" loading="lazy">
+</div>
+
+<div class="wallpaper">
+<img src="images/anime/anime24.jpg" alt="Anime wallpaper 6" loading="lazy">
+</div>
+
+</section>
+
+
+<!-- Pagination -->
+
+<div class="pagination">
+
+<a href="anime-page2.html">Previous</a>
+
+<a href="anime.html">1</a>
+<a href="anime-page2.html">2</a>
+<a class="active" href="anime-page3.html">3</a>
+
+</div>
+
+
+<!-- POPUP VIEWER -->
+
+<div id="popup" class="image-popup"> 
+<img id="popup-img">
+<a id="download-btn" download>Download Wallpaper</a>
+
+</div>
+
+
+<script>
+
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+const downloadBtn = document.getElementById("download-btn");
+let zoomed = false;
+document.querySelectorAll(".wallpaper img").forEach(img => {
+img.addEventListener("click", () => {
+popup.style.display = "flex";
+popupImg.src = img.src;
+downloadBtn.href = img.src;
+zoomed = false;
+popupImg.style.transform = "scale(1)";
+
+});
+
+});
+
+popupImg.addEventListener("click",(e)=>{
+e.stopPropagation();
+zoomed = !zoomed;
+if(zoomed){
+popupImg.style.transform="scale(2)";
+
+}else{
+
+popupImg.style.transform="scale(1)";
+
+}
+
+});
+
+popup.addEventListener("click",()=>{
+popup.style.display="none";
+
+});
+
+</script>
+
+</body>
+</html>
